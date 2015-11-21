@@ -872,3 +872,392 @@ Started GET "/assets/jquery_ujs.self.js?body=1" for ::1 at 2015-07-28 12:40:07 -
   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (5.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120130161449')
   [1m[36m (5.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+
+
+Started GET "/assets/rails.png" for 82.73.160.219 at 2015-11-20 23:34:03 +0000
+
+
+Started GET "/assets/rails.png" for 82.73.160.219 at 2015-11-20 23:34:33 +0000
+
+
+Started GET "/movies" for 82.73.160.219 at 2015-11-20 23:34:44 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (34.7ms)
+Completed 200 OK in 245ms (Views: 189.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-20 23:34:45 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:34:45 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:34:45 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:34:45 +0000
+
+
+Started GET "/movies/0/edit" for 82.73.160.219 at 2015-11-20 23:40:25 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"0"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 11ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Movie with 'id'=0):
+  app/controllers/movies_controller.rb:47:in `edit'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.2ms)
+
+
+Started GET "/movies/1/edit" for 82.73.160.219 at 2015-11-20 23:47:24 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered movies/edit.html.haml within layouts/application (27.1ms)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 2.5ms)
+
+ActionView::Template::Error (undefined method `director' for #<Movie:0x00000005200c10>):
+    14:   = date_select :movie, :release_date
+    15: 
+    16:   = label :movie, :director, 'Director'
+    17:   = text_field :movie, 'director'
+    18: 
+    19:   = submit_tag 'Update Movie Info'
+  app/views/movies/edit.html.haml:17:in `block in _app_views_movies_edit_html_haml__3415761249988903293_42713740'
+  app/views/movies/edit.html.haml:5:in `_app_views_movies_edit_html_haml__3415761249988903293_42713740'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.3ms)
+
+
+Started GET "/movies/3/edit" for 82.73.160.219 at 2015-11-20 23:53:47 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/edit.html.haml within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `director' for #<Movie:0x007fc0b8b54db8>):
+    14:   = date_select :movie, :release_date
+    15: 
+    16:   = label :movie, :director, 'Director'
+    17:   = text_field :movie, 'director'
+    18: 
+    19:   = submit_tag 'Update Movie Info'
+  app/views/movies/edit.html.haml:17:in `block in _app_views_movies_edit_html_haml__3415761249988903293_44439580'
+  app/views/movies/edit.html.haml:5:in `_app_views_movies_edit_html_haml__3415761249988903293_44439580'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.3ms)
+
+
+Started GET "/movies/3/edit" for 82.73.160.219 at 2015-11-20 23:55:53 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/edit.html.haml within layouts/application (24.8ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 2.0ms)
+
+ActionView::Template::Error (undefined method `director' for #<Movie:0x00000003e702e0>):
+    14:   = date_select :movie, :release_date
+    15: 
+    16:   = label :movie, :director, 'Director'
+    17:   = text_field :movie, 'director'
+    18: 
+    19:   = submit_tag 'Update Movie Info'
+  app/views/movies/edit.html.haml:17:in `block in _app_views_movies_edit_html_haml___646564553542063545_32456780'
+  app/views/movies/edit.html.haml:5:in `_app_views_movies_edit_html_haml___646564553542063545_32456780'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.2/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddDirectorToMovies (20151120212325)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "movies" ADD "director" varchar[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151120212325"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/movies/3/edit" for 82.73.160.219 at 2015-11-20 23:58:23 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/edit.html.haml within layouts/application (27.4ms)
+Completed 200 OK in 283ms (Views: 239.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-20 23:58:24 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:58:24 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:58:24 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:58:24 +0000
+
+
+Started PUT "/movies/3" for 82.73.160.219 at 2015-11-20 23:58:43 +0000
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x74g5QlDceYzmJdDi7wdmxsq2sFts6BP1+3IPnGtuexBxv4Z9bR2UYLWsjN/RQGMHyNzeYq81KiT27IwggTmRw==", "movie"=>{"title"=>"When Harry Met Sally", "rating"=>"R", "release_date(1i)"=>"1989", "release_date(2i)"=>"7", "release_date(3i)"=>"21", "director"=>"pete"}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?  [["director", "pete"], ["updated_at", "2015-11-20 23:58:43.711793"], ["id", 3]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+Redirected to https://saas-wiggidywouter.c9users.io/movies/3
+Completed 302 Found in 16ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/movies/3" for 82.73.160.219 at 2015-11-20 23:58:43 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-20 23:58:43 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:58:43 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:58:43 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:58:43 +0000
+
+
+Started GET "/movies" for 82.73.160.219 at 2015-11-20 23:58:55 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (18.2ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-20 23:58:55 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:58:55 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:58:56 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-20 23:58:56 +0000
+
+
+Started GET "/movies" for 82.73.160.219 at 2015-11-21 00:00:49 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (32.9ms)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-21 00:00:49 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:00:50 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:00:50 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:00:50 +0000
+
+
+Started GET "/movies" for 82.73.160.219 at 2015-11-21 00:01:25 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (26.5ms)
+Completed 200 OK in 157ms (Views: 155.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-21 00:01:25 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:01:25 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:01:25 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:01:25 +0000
+
+
+Started GET "/movies/3/edit" for 82.73.160.219 at 2015-11-21 00:01:42 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/edit.html.haml within layouts/application (13.6ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-21 00:01:42 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:01:42 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:01:42 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:01:42 +0000
+
+
+Started PUT "/movies/3" for 82.73.160.219 at 2015-11-21 00:02:01 +0000
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gmEfGFTrWdArVKELvBVNIvYG9TXlIYHYMn0n+RIQfX0EGcHkqBxeZ5oahHtI7FE18g9cjQIu9T92S1334bki1g==", "movie"=>{"title"=>"When Harry Met Sally", "rating"=>"R", "release_date(1i)"=>"1989", "release_date(2i)"=>"7", "release_date(3i)"=>"21", "director"=>"Stephen King"}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "movies" SET "director" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["director", "Stephen King"], ["updated_at", "2015-11-21 00:02:01.587803"], ["id", 3]]
+  [1m[35m (8.6ms)[0m  commit transaction
+Redirected to https://saas-wiggidywouter.c9users.io/movies/3
+Completed 302 Found in 13ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/movies/3" for 82.73.160.219 at 2015-11-21 00:02:01 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-21 00:02:01 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:02:01 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:02:01 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:02:01 +0000
+
+
+Started GET "/movies/3" for 82.73.160.219 at 2015-11-21 00:03:22 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:22 +0000
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-21 00:03:22 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:22 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:22 +0000
+
+
+Started GET "/movies/3/edit" for 82.73.160.219 at 2015-11-21 00:03:27 +0000
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/edit.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 21ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-21 00:03:27 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:27 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:27 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:27 +0000
+
+
+Started PUT "/movies/3" for 82.73.160.219 at 2015-11-21 00:03:29 +0000
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cUEoM7rCGoV+LnYeBCyzQK5bQRHzIIQpjM9LU4p+Kmj3OfbPRjUdMs9gU27w1a9XqlLoqRQv8M7I+TFdedd1ww==", "movie"=>{"title"=>"When Harry Met Sally", "rating"=>"R", "release_date(1i)"=>"1989", "release_date(2i)"=>"7", "release_date(3i)"=>"21", "director"=>"Stephen King"}, "commit"=>"Update Movie Info", "id"=>"3"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to https://saas-wiggidywouter.c9users.io/movies/3
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/movies/3" for 82.73.160.219 at 2015-11-21 00:03:29 +0000
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered movies/show.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-21 00:03:29 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:29 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:29 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:29 +0000
+
+
+Started GET "/movies" for 82.73.160.219 at 2015-11-21 00:03:31 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+  Rendered movies/index.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-21 00:03:31 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:31 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:31 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:31 +0000
+
+
+Started GET "/movies" for 82.73.160.219 at 2015-11-21 00:03:49 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')[0m
+  Rendered movies/index.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self.css?body=1" for 82.73.160.219 at 2015-11-21 00:03:49 +0000
+
+
+Started GET "/assets/jquery.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:50 +0000
+
+
+Started GET "/assets/jquery_ujs.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:50 +0000
+
+
+Started GET "/assets/application.self.js?body=1" for 82.73.160.219 at 2015-11-21 00:03:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
