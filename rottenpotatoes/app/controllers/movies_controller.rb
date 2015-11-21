@@ -68,6 +68,6 @@ class MoviesController < ApplicationController
       flash.keep
       redirect_to movies_path
     end
-    @movies = Movie.where(director: @movie.director)
+    @movies = Movie.find_movies_with_same_director(@movie)
   end
 end
