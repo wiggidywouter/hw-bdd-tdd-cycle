@@ -26,6 +26,16 @@ module NavigationHelpers
       page_name =~ /^the edit page for "(.*)"$/
       movie = Movie.find_by_title $1
       edit_movie_path movie
+    
+    when /^the details page for "(.*)"$/
+      page_name =~ /^the details page for "(.*)"$/
+      movie = Movie.find_by_title $1
+      movie_path movie
+     
+    when /^the Similar Movies page for "(.*)"$/
+      page_name =~ /^the Similar Movies page for "(.*)"$/
+      movie = Movie.find_by_title $1
+      same_director_path movie
       
     else
       begin

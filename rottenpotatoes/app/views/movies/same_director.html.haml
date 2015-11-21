@@ -1,3 +1,4 @@
+-#  This file is app/views/same_director/index.html.haml
 -# in app/views/movies/show.html.haml
 
 %h2 Details about #{@movie.title}
@@ -16,6 +17,25 @@
 %h3 Description:
 
 %p#description= @movie.description
+
+%h2 Movies with the same director
+
+%table#movies
+  %thead
+    %tr
+      %th Movie Title
+      %th Director
+      %th Rating
+      %th Release Date
+      %th More Info
+  %tbody
+    - @movies.each do |movie|
+      %tr
+        %td= movie.title 
+        %td= movie.director
+        %td= movie.rating
+        %td= movie.release_date
+        %td= link_to "More about #{movie.title}", movie_path(movie)
 
 = link_to 'Edit', edit_movie_path(@movie)
 = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
